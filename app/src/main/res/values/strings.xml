@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SunshineLab</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="message">Today, June 24</string>
+    <string name="temp_low">8℉</string>
+    <string name="temp_high">21℉</string>
+    <string name="refresh_text">Refresh</string>
+</resources>
