@@ -1,15 +1,20 @@
 package com.itopplus.tonmanport.sunshinelab;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Time;
+import android.text.method.CharacterPickerDialog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,10 +77,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         @Override
-        protected void onPostExecute(String[] results) {
+        protected void onPostExecute(final String[] results) {
             AdapterforecastEntry = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item_forecast,R.id.list_item_forevast_textview,results);
             ListView listview = (ListView)findViewById(R.id.listview_forecast);
             listview.setAdapter(AdapterforecastEntry);
+            Log.v(ActivityTag, "Enter");
+            listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    //AdapterforecastEntry.getItem(position);
+                    Log.v(ActivityTag, "Clicked");
+                    Log.v(ActivityTag, results[position]);
+                    //Toast.makeText(getApplicationContext(),results[position],Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(getApplicationContext(),DetailActivity.class);
+                    intent.putExtra(Intent.EXTRA_TEXT, results[position]);
+                    startActivity(intent);
+                }
+            });
             Log.v(ActivityTag,"Async Post Execute");
         }
 
