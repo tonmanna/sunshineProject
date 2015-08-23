@@ -1,66 +1,76 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
             <TextView android:text="@string/message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10sp"
                 android:textStyle="bold"
                 android:id="@+id/txtToday"
+                android:gravity="center"
                 android:textSize="22sp"
                 android:layout_weight="1" />
 
             <TextView android:text="@string/temp_high"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtToday"
-                android:id="@+id/txtHight"
-                android:textSize="18sp"
+                android:paddingTop="15dp"
+                android:gravity="center"
+                android:id="@+id/txtHigh"
+                android:textSize="30sp"
                 android:layout_weight="1" />
 
             <TextView android:text="@string/temp_low"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtHight"
+                android:gravity="center"
                 android:id="@+id/txtLow"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:layout_weight="1" />
-    </RelativeLayout>
+        </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/relativeCloud"
-        android:layout_width="wrap_content" android:layout_marginLeft="250sp"
-        android:gravity="center"
-        android:layout_height="wrap_content" >
-
-        <ImageView
-            android:id="@+id/imageCloud"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_launcher" />
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageDetail"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center"
+                android:src="@drawable/cloud_day" />
 
-        <TextView
-            android:id="@+id/txtCloud"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageCloud"
-            android:text="Cloudy"
-            android:paddingLeft="8sp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/txtCloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clouds"
+                android:layout_gravity="center"
+                android:paddingLeft="8sp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent" android:paddingTop="100sp"
+        android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ListView
             android:layout_width="match_parent"
@@ -69,4 +79,7 @@
             />
     </FrameLayout>
 
-</RelativeLayout>
+
+
+
+</LinearLayout>

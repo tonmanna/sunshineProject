@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/tools">
     <string name="app_name">SunshineLab</string>
 
     <string name="hello_world">Hello world!</string>
@@ -8,4 +8,24 @@
     <string name="temp_high">21℉</string>
     <string name="refresh_text">Refresh</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="settting_text">Setting</string>
+    <string name="location_label">Location</string>
+    <string name="location_key">location</string>
+    <string name="default_label_location">Bangkok,th</string>
+
+    <string name="pref_units_label">Temperature Units</string>
+    <string name="pref_units_label_metric">Metric</string>
+    <string name="pref_units_label_imperial">Imperial</string>
+    <string name="pref_units_key" translatable="false">units</string>
+    <string name="pref_units_metric" translatable="false">metric</string>
+    <string name="pref_units_imperial" translatable="false">imperial</string>
+    <string name="action_map">Map Location</string>
+    <string name="share_text">Share</string>
+
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="format_full_friendly_date"><xliff:g id="day">%1$s</xliff:g>, <xliff:g id="date">%2$s</xliff:g></string>
+    <string name="format_temperature"><xliff:g id="temp">%1.0f</xliff:g>\u00B0</string>
+
 </resources>
