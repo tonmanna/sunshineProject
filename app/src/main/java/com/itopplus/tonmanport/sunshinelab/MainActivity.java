@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
                         .appendQueryParameter(FORMAT_PARAM, format)
                         .appendQueryParameter(UNIT_PARAM, units)
                         .appendQueryParameter(DAYS_PARAM,Integer.toString(numDays))
+                        .appendQueryParameter("appid","94f9c38278cac8afc925150e42de15f9")
                         .build();
                 // URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q="+location+"&mode=json&units=metric&cnt=7");
                 URL url = new URL(buildUri.toString());
